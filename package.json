@@ -1,0 +1,25 @@
+{
+  "name": "dsalg-tutorial",
+  "version": "0.0.1",
+  "description": "使用 vuepress 生成的 markdown 文档站点",
+  "author": "mrcode <99299684@qq.com>",
+  "private": false,
+  "scripts": {
+    "docs:dev": "vuepress dev docs --open",
+    "docs:devx": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs --open",
+    "docs:build": "vuepress build docs",
+    "docs:buildx": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs"
+  },
+  "dependencies": {
+    "moment": "^2.24.0",
+    "vuepress-plugin-baidu-autopush": "^1.0.1",
+    "vuepress-plugin-baidu-tongji-analytics": "^1.0.0",
+    "vuepress-plugin-code-copy": "^1.0.4"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.5.2",
+    "@vuepress/plugin-medium-zoom": "^1.5.2",
+    "@vuepress/plugin-pwa": "^1.5.2",
+    "vuepress": "^1.5.2"
+  }
+}
