@@ -45,7 +45,8 @@ module.exports = {
     // 页面顶部的导航栏：可以根据自己的需要制定
     nav: [
       { text: 'Home', link: '/' },
-      { text: '图解 Java 数据结构和算法', link: '/dsalg-java-hsp/' }
+      { text: '图解 Java 数据结构和算法', link: '/dsalg-java-hsp/' },
+      { text: '笔记精选汇总', link: 'https://github.com/zq99299/repository-summary' }
     ],
     sidebar: {  // 侧边栏配置，需要展示的侧边栏需要在这里配置
       '/dsalg-java-hsp/': dsalgJavaHspSC()
