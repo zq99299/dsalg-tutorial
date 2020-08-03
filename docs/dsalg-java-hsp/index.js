@@ -22,6 +22,18 @@ module.exports = () => {
         '04/03.md',
         '04/04.md'
       ]
+    },
+    {
+      title: '栈',
+      collapsable: true,
+      children: [
+        '05/',
+        '05/01.md',
+        '05/02.md',
+        '05/03.md',
+        '05/04.md',
+        '05/05.md'
+      ]
     }
   ]
 }
