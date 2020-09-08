@@ -44,6 +44,19 @@ module.exports = () => {
         '06/02.md',
         '06/03.md'
       ]
+    },
+    {
+      title: '排序算法',
+      collapsable: true,
+      children: [
+        '07/',
+        '07/01.md',
+        '07/02.md',
+        '07/03.md',
+        '07/04.md',
+        '07/05.md',
+        '07/06.md'
+      ]
     }
   ]
 }
