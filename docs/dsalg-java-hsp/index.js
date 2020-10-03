@@ -61,6 +61,17 @@ module.exports = () => {
         '07/09.md',
         '07/10.md'
       ]
+    },
+    {
+      title: '查找算法',
+      collapsable: true,
+      children: [
+        '08/',
+        '08/01.md',
+        '08/02.md',
+        '08/03.md',
+        '08/04.md'
+      ]
     }
   ]
 }
