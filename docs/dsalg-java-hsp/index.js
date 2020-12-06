@@ -75,13 +75,25 @@ module.exports = () => {
     },
     '09/',
     {
-      title: '树结构的基础部分',
+      title: '树结构-基础',
       collapsable: true,
       children: [
         '10/',
         '10/01.md',
         '10/02.md',
         '10/03.md'
+      ]
+    },
+    {
+      title: '树结构-实际应用',
+      collapsable: true,
+      children: [
+        '11/',
+        '11/01.md',
+        '11/02.md',
+        '11/03.md',
+        '11/04.md',
+        '11/05.md'
       ]
     }
   ]
