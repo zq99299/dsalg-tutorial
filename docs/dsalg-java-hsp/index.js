@@ -95,6 +95,16 @@ module.exports = () => {
         '11/04.md',
         '11/05.md'
       ]
+    },
+    {
+      title: '多路查找树',
+      collapsable: true,
+      children: [
+        '12/',
+        '12/01.md',
+        '12/02.md',
+        '12/03.md'
+      ]
     }
   ]
 }
