@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>递归-八皇后问题（回溯算法） | 数据结构与算法 系列教程（笔记）</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="数据结构与算法 系列教程学习笔记">
+    
+    <link rel="preload" href="/dsalg-tutorial/assets/css/0.styles.e6cd60ce.css" as="style"><link rel="preload" href="/dsalg-tutorial/assets/js/app.1991d278.js" as="script"><link rel="preload" href="/dsalg-tutorial/assets/js/2.31d164c0.js" as="script"><link rel="preload" href="/dsalg-tutorial/assets/js/45.62a00e96.js" as="script"><link rel="preload" href="/dsalg-tutorial/assets/js/32.556e8103.js" as="script"><link rel="prefetch" href="/dsalg-tutorial/assets/js/10.305d7e1b.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/11.c54ea817.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/12.1178f80f.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/13.c215bde8.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/14.03cbdce5.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/15.410e29ad.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/16.8a04222a.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/17.0142b0de.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/18.77bfa73f.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/19.0814bda4.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/20.b8502f8d.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/21.b7b257ba.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/22.71b6df9c.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/23.d3f639a9.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/24.1dab8f77.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/25.b8f51b48.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/26.ab451cea.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/27.2fb33bc0.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/28.5f638849.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/29.ee2d3ab5.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/3.5de1c9f6.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/30.822e85c6.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/31.cfe0fc9d.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/33.3c2fe9dd.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/34.84f34ea6.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/35.56eb50e7.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/36.47d7a783.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/37.c7341f41.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/38.55c1364b.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/39.90bc3d02.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/4.bd1be4df.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/40.1e56a8d3.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/41.35781ae0.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/42.f79dd5f7.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/43.b04972ff.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/44.e7ba04df.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/46.5f39242c.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/47.4fe67a1d.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/48.80b22367.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/49.120f6975.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/5.624625f3.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/50.df843864.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/51.1e52bb80.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/52.6cb35c7c.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/53.ed415785.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/54.64684860.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/55.ff6f433d.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/56.2f078613.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/57.2d9ebe9a.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/58.cb86982e.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/59.0afceafe.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/6.20fe70cc.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/60.59cdbe33.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/61.74702441.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/62.3976eb2f.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/63.9c33d4b6.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/64.59570241.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/65.4cfdcab8.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/66.45689341.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/67.d63cd455.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/68.997728a0.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/69.bc2660fe.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/7.dd22cdbf.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/70.21eda7c4.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/71.5c6f8394.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/72.5e75795f.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/73.7817db5c.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/74.ff471c89.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/75.ae21bf26.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/76.f6108e0c.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/77.ae5509d8.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/78.17f2d91c.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/79.8420db2a.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/8.01a752a2.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/80.e22ee77e.js"><link rel="prefetch" href="/dsalg-tutorial/assets/js/9.a0ccd3ef.js">
+    <link rel="stylesheet" href="/dsalg-tutorial/assets/css/0.styles.e6cd60ce.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/dsalg-tutorial/" class="home-link router-link-active"><!----> <span class="site-name">数据结构与算法 系列教程（笔记）</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/dsalg-tutorial/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/dsalg-tutorial/dsalg-java-hsp/" class="nav-link router-link-active">
+  图解 Java 数据结构和算法
+</a></div><div class="nav-item"><a href="https://github.com/zq99299/repository-summary" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  笔记精选汇总
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/zq99299/dsalg-tutorial" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/dsalg-tutorial/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/dsalg-tutorial/dsalg-java-hsp/" class="nav-link router-link-active">
+  图解 Java 数据结构和算法
+</a></div><div class="nav-item"><a href="https://github.com/zq99299/repository-summary" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  笔记精选汇总
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/zq99299/dsalg-tutorial" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/dsalg-tutorial/dsalg-java-hsp/" aria-current="page" class="sidebar-link">图解 Java 数据结构和算法</a></li><li><a href="/dsalg-tutorial/dsalg-java-hsp/01/" class="sidebar-link">内容介绍</a></li><li><a href="/dsalg-tutorial/dsalg-java-hsp/02/" class="sidebar-link">数据结构和算法概述</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>稀疏数组和队列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>链表 Linked List</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>栈</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>递归</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dsalg-tutorial/dsalg-java-hsp/06/" aria-current="page" class="sidebar-link">递归</a></li><li><a href="/dsalg-tutorial/dsalg-java-hsp/06/01.html" class="sidebar-link">递归入门</a></li><li><a href="/dsalg-tutorial/dsalg-java-hsp/06/02.html" class="sidebar-link">递归-迷宫问题</a></li><li><a href="/dsalg-tutorial/dsalg-java-hsp/06/03.html" aria-current="page" class="active sidebar-link">递归-八皇后问题（回溯算法）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dsalg-tutorial/dsalg-java-hsp/06/03.html#八皇后思路分析" class="sidebar-link">八皇后思路分析</a></li><li class="sidebar-sub-header"><a href="/dsalg-tutorial/dsalg-java-hsp/06/03.html#小节" class="sidebar-link">小节</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>排序算法</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>查找算法</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/dsalg-tutorial/dsalg-java-hsp/09/" class="sidebar-link">哈希表（散列）</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>树结构-基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>树结构-实际应用</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>多路查找树</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>图</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>常用 10 种算法</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="递归-八皇后问题-回溯算法"><a href="#递归-八皇后问题-回溯算法" class="header-anchor">#</a> 递归-八皇后问题（回溯算法）</h1> <p>八皇后问题，是一个古老而著名的问题，是 <strong>回溯算法</strong> 的典型案例。</p> <p>该问题是国际西洋棋棋手马克斯·贝瑟尔于 1848 年提出：在 8×8 格的国际象棋上摆放八个皇后，使其不能互相攻击，即：任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。</p> <p><img src="/dsalg-tutorial/assets/img/image-20200627193219662.945b8544.png" alt="image-20200627193219662"></p> <p>使用回溯算法，高斯认为有 <strong>76 种方案</strong>。1854年在柏林的象棋杂志上不同的作者发表了 40 种不同的解，后来有人用图论的方法解出 <strong>92 种结果</strong>。计算机发明后，有多种计算机语言可以解决此问题</p> <p>可以去百度搜索下这个小游戏，自己玩几下感受下，还是很难的</p> <h2 id="八皇后思路分析"><a href="#八皇后思路分析" class="header-anchor">#</a> 八皇后思路分析</h2> <p>找出八皇后有多少种摆法，其实就是暴力穷举，思路如下：</p> <ol><li>第一个个皇后先放第一行第一列</li> <li>第二个皇后放在第二行第一列，然后判断是否符合规则，如果不符合规则，则继续放在第 2 列，依次把所有列都放完，找到一个合适的列（某一遍）</li> <li>继续第 3 个皇后，直到 8 个皇后都放到了棋盘上，并且没有违反规则，就算一个解答</li> <li>当得到一个正确解时，在栈回退到上一个栈时，就会开始回溯，即将第一个皇后放在第一列的所有正确解全部拿到</li> <li>然后回头继续第一个皇后放第二列，后面继续循环执行前面 4 步</li></ol> <p>理论上应该创建一个二维数组来表示棋盘，但是实际上可以通过算法，用一个一维数组即可解决问题. <code>arr[8] = {0 , 4, 7, 5, 2, 6, 1, 3}</code>，这个是存储结果，数组下标表示第几行，对应的值则为在那一列上摆放着</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">cn<span class="token punctuation">.</span>mrcode<span class="token punctuation">.</span>study<span class="token punctuation">.</span>dsalgtutorialdemo<span class="token punctuation">.</span>datastructure<span class="token punctuation">.</span>recursion</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span></span><span class="token class-name">Test</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 八皇后问题：
+ * &lt;pre&gt;
+ *     规则：在 8×8 格的国际象棋上摆放八个皇后，使其不能互相攻击，即：任意 两个皇后 都不能处于同一行、同一列或同一斜线上，问有多少种摆法。
+ * &lt;/pre&gt;
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Queue8</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 共有多少个皇后</span>
+    <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * 存放皇后位置的结果
+     * &lt;pre&gt;
+     * 下标：表示棋盘中的某一行
+     * 对应的值：表示在这一行上，该皇后摆放在哪一列
+     * 比如：array[0] = 1，表示在第 1 行的第 2 列上摆放了一个皇后
+     *
+     * 由于规则，一行只能有一个皇后，所以可以使用一维数组来代替二维数组的棋盘结果
+     * &lt;/pre&gt;
+     */</span>
+    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>max<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 统计有多少个结果</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Queue8</span> queue8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Queue8</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue8<span class="token punctuation">.</span><span class="token function">check</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 从第 1 行开始放置</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 放置第 n 个（行）皇后
+     *
+     * @param n
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">check</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// n = 8，那么表示放第 9 个皇后，8 个皇后已经放完了</span>
+        <span class="token comment">// 表示找到了一个正确的结果，打印这个结果，并返回</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            count<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 开始暴力对比，从该行的第一列开始尝试放置皇后，直到与前面所放置的不冲突</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> max<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 在该行的第 i 列上放置一个皇后</span>
+            array<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+            <span class="token comment">// 检测与已经放置的是否冲突</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">judge</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 如果不冲突，则表示该行的皇后放置没有问题</span>
+                <span class="token comment">// 开始进入下一行的皇后放置</span>
+                <span class="token function">check</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 如果冲突，这里什么也不做</span>
+            <span class="token comment">// 因为是从第一列开始放置，如果冲突，则尝试放置到第 2 列上，直到放置成功</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 判定要放置的这一个皇后，和前面已经摆放的位置是否冲突
+     *
+     * @param n 第 n 个皇后
+     * @return
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">judge</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>
+                    <span class="token comment">/*
+                     如果他们的摆放位置一样，说明是在同一列
+                      x ....
+                      x ....
+                     */</span>
+                    array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> array<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+                            <span class="token comment">/*
+                              检测是否是同一斜列
+                              下标: 代表的是第几行
+                              值：代表的是第几列
+                              . x . . .  n = 1,value = 1
+                              x . . . .  i = 0,value = 0
+                              Math.abs(n - i) = 1
+                              Math.abs(array[n] - array[i]) = 1
+
+                              . . x . .  n = 1,value = 2
+                              . x . . .  i = 0,value = 1
+                              Math.abs(n - i) = 1
+                              Math.abs(array[n] - array[i]) = 1
+                             */</span>
+                            <span class="token operator">||</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>n <span class="token operator">-</span> i<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">-</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 打印皇后的位置
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;第 %02d 个结果 ：&quot;</span><span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 下面是对于判定是否是同行，同列、同一斜列的分步骤测试，比较好理解
+     */</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">judgeTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">/*
+         * . . . . . . . .
+         * x . . . . . . .
+         */</span>
+        <span class="token class-name">Queue8</span> queue8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Queue8</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        queue8<span class="token punctuation">.</span>array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//======== 放置第 1 个皇后</span>
+        <span class="token comment">// 判断是否是同一列</span>
+        <span class="token comment">/*
+         * x . . . . . . .  // 计划放到这里
+         * x . . . . . . .
+         */</span>
+        queue8<span class="token punctuation">.</span>array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 从第一列开始放置</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;同一列，是否通过：&quot;</span> <span class="token operator">+</span> queue8<span class="token punctuation">.</span><span class="token function">judge</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/*
+         * . x . . . . . .  // 计划放到这里
+         * x . . . . . . .
+         */</span>
+        queue8<span class="token punctuation">.</span>array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token comment">// 第一列不行，放置到第 2 列上</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;同一斜列，是否通过：&quot;</span> <span class="token operator">+</span> queue8<span class="token punctuation">.</span><span class="token function">judge</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/*
+         * . . x . . . . .  // 计划放到这里
+         * x . . . . . . .
+         */</span>
+        queue8<span class="token punctuation">.</span>array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token comment">// 第 2 列不行，放置到第 3 列上,这个肯定是可以的</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;同一列或同一斜列，是否通过：&quot;</span> <span class="token operator">+</span> queue8<span class="token punctuation">.</span><span class="token function">judge</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//======== 放置第 3 个皇后</span>
+        <span class="token comment">/*
+         * x . . . . . . .  // 计划放到这里
+         * . . x . . . . .
+         * x . . . . . . .
+         */</span>
+        queue8<span class="token punctuation">.</span>array<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">// 与第一行的在同一列上了</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;同一列，是否通过：&quot;</span> <span class="token operator">+</span> queue8<span class="token punctuation">.</span><span class="token function">judge</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/*
+         * . x . . . . . .  // 计划放到这里
+         * . . x . . . . .
+         * x . . . . . . .
+         */</span>
+        queue8<span class="token punctuation">.</span>array<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token comment">// 第一列不行，放置到第 2 列</span>
+        <span class="token comment">// 这里与第 2 行的同一斜列了，也是不行的</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;同一斜列，是否通过：&quot;</span> <span class="token operator">+</span> queue8<span class="token punctuation">.</span><span class="token function">judge</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br></div></div><p>输出结果如下</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>第 01 个结果 ：0 4 7 5 2 6 1 3 
+第 02 个结果 ：0 5 7 2 6 3 1 4 
+第 03 个结果 ：0 6 3 5 7 1 4 2 
+第 04 个结果 ：0 6 4 7 1 3 5 2 
+第 05 个结果 ：1 3 5 7 2 0 6 4 
+第 06 个结果 ：1 4 6 0 2 7 5 3 
+第 07 个结果 ：1 4 6 3 0 7 5 2 
+第 08 个结果 ：1 5 0 6 3 7 2 4 
+第 09 个结果 ：1 5 7 2 0 3 6 4 
+第 10 个结果 ：1 6 2 5 7 4 0 3 
+第 11 个结果 ：1 6 4 7 0 3 5 2 
+第 12 个结果 ：1 7 5 0 2 4 6 3 
+第 13 个结果 ：2 0 6 4 7 1 3 5 
+第 14 个结果 ：2 4 1 7 0 6 3 5 
+第 15 个结果 ：2 4 1 7 5 3 6 0 
+第 16 个结果 ：2 4 6 0 3 1 7 5 
+第 17 个结果 ：2 4 7 3 0 6 1 5 
+第 18 个结果 ：2 5 1 4 7 0 6 3 
+第 19 个结果 ：2 5 1 6 0 3 7 4 
+第 20 个结果 ：2 5 1 6 4 0 7 3 
+第 21 个结果 ：2 5 3 0 7 4 6 1 
+第 22 个结果 ：2 5 3 1 7 4 6 0 
+第 23 个结果 ：2 5 7 0 3 6 4 1 
+第 24 个结果 ：2 5 7 0 4 6 1 3 
+第 25 个结果 ：2 5 7 1 3 0 6 4 
+第 26 个结果 ：2 6 1 7 4 0 3 5 
+第 27 个结果 ：2 6 1 7 5 3 0 4 
+第 28 个结果 ：2 7 3 6 0 5 1 4 
+第 29 个结果 ：3 0 4 7 1 6 2 5 
+第 30 个结果 ：3 0 4 7 5 2 6 1 
+第 31 个结果 ：3 1 4 7 5 0 2 6 
+第 32 个结果 ：3 1 6 2 5 7 0 4 
+第 33 个结果 ：3 1 6 2 5 7 4 0 
+第 34 个结果 ：3 1 6 4 0 7 5 2 
+第 35 个结果 ：3 1 7 4 6 0 2 5 
+第 36 个结果 ：3 1 7 5 0 2 4 6 
+第 37 个结果 ：3 5 0 4 1 7 2 6 
+第 38 个结果 ：3 5 7 1 6 0 2 4 
+第 39 个结果 ：3 5 7 2 0 6 4 1 
+第 40 个结果 ：3 6 0 7 4 1 5 2 
+第 41 个结果 ：3 6 2 7 1 4 0 5 
+第 42 个结果 ：3 6 4 1 5 0 2 7 
+第 43 个结果 ：3 6 4 2 0 5 7 1 
+第 44 个结果 ：3 7 0 2 5 1 6 4 
+第 45 个结果 ：3 7 0 4 6 1 5 2 
+第 46 个结果 ：3 7 4 2 0 6 1 5 
+第 47 个结果 ：4 0 3 5 7 1 6 2 
+第 48 个结果 ：4 0 7 3 1 6 2 5 
+第 49 个结果 ：4 0 7 5 2 6 1 3 
+第 50 个结果 ：4 1 3 5 7 2 0 6 
+第 51 个结果 ：4 1 3 6 2 7 5 0 
+第 52 个结果 ：4 1 5 0 6 3 7 2 
+第 53 个结果 ：4 1 7 0 3 6 2 5 
+第 54 个结果 ：4 2 0 5 7 1 3 6 
+第 55 个结果 ：4 2 0 6 1 7 5 3 
+第 56 个结果 ：4 2 7 3 6 0 5 1 
+第 57 个结果 ：4 6 0 2 7 5 3 1 
+第 58 个结果 ：4 6 0 3 1 7 5 2 
+第 59 个结果 ：4 6 1 3 7 0 2 5 
+第 60 个结果 ：4 6 1 5 2 0 3 7 
+第 61 个结果 ：4 6 1 5 2 0 7 3 
+第 62 个结果 ：4 6 3 0 2 7 5 1 
+第 63 个结果 ：4 7 3 0 2 5 1 6 
+第 64 个结果 ：4 7 3 0 6 1 5 2 
+第 65 个结果 ：5 0 4 1 7 2 6 3 
+第 66 个结果 ：5 1 6 0 2 4 7 3 
+第 67 个结果 ：5 1 6 0 3 7 4 2 
+第 68 个结果 ：5 2 0 6 4 7 1 3 
+第 69 个结果 ：5 2 0 7 3 1 6 4 
+第 70 个结果 ：5 2 0 7 4 1 3 6 
+第 71 个结果 ：5 2 4 6 0 3 1 7 
+第 72 个结果 ：5 2 4 7 0 3 1 6 
+第 73 个结果 ：5 2 6 1 3 7 0 4 
+第 74 个结果 ：5 2 6 1 7 4 0 3 
+第 75 个结果 ：5 2 6 3 0 7 1 4 
+第 76 个结果 ：5 3 0 4 7 1 6 2 
+第 77 个结果 ：5 3 1 7 4 6 0 2 
+第 78 个结果 ：5 3 6 0 2 4 1 7 
+第 79 个结果 ：5 3 6 0 7 1 4 2 
+第 80 个结果 ：5 7 1 3 0 6 4 2 
+第 81 个结果 ：6 0 2 7 5 3 1 4 
+第 82 个结果 ：6 1 3 0 7 4 2 5 
+第 83 个结果 ：6 1 5 2 0 3 7 4 
+第 84 个结果 ：6 2 0 5 7 4 1 3 
+第 85 个结果 ：6 2 7 1 4 0 5 3 
+第 86 个结果 ：6 3 1 4 7 0 2 5 
+第 87 个结果 ：6 3 1 7 5 0 2 4 
+第 88 个结果 ：6 4 2 0 5 7 1 3 
+第 89 个结果 ：7 1 3 0 6 4 2 5 
+第 90 个结果 ：7 1 4 2 0 6 3 5 
+第 91 个结果 ：7 2 0 5 1 4 6 3 
+第 92 个结果 ：7 3 0 2 5 1 6 4 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br></div></div><p>一定要理解它这个 <strong>回溯</strong> 机制，比如拿其中这两个来分析</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>第 06 个结果 ：1 4 6 0 2 7 5 3 
+第 07 个结果 ：1 4 6 3 0 7 5 2 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ol><li>从第 1 行，到最后的第 8 行，这时 n+1 进入到第 9 行，发现已经放完 8 个皇后了，拿到一个完整的结果，</li> <li>就返回到第 8 行的那个方法中，因为第 8 行放置结果是 3，那么回到这里来的时候，就会尝试第 4 列的结果</li> <li>从结果来看，肯定不满足，就一直会尝试直到，第 8 行的 3 变成 7，这个 check 方法尝试完了，都没有出一个结果，就自动退出这个方法</li> <li>回到了第 7 行的第 5 列这个结果上，又继续尝试</li> <li>从结果上来看，回到了第 4 行上，将 0 变成了 3，才发现这个位置与之前的不冲突，然后往下，进入到第 5 个皇后的放置上</li> <li>依次类推</li></ol> <p>其实这里递归的原理就是穷举法一样的思想，挨个的尝试，直到把所有的可能都尝试完。</p> <p>有一个 <strong>细节需要知道</strong>，这里的 <strong>不同行、不同列、不同斜列</strong>，不要求非连续的，也就是说，即使不是连续的斜列也算</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>x . . . . . . .
+. . . . . . . .
+. . x . . . . .
+这样不连续的斜列，也算是在一条斜线上。一定要明白这个规则，才能使用那个判定斜列的算法
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="小节"><a href="#小节" class="header-anchor">#</a> 小节</h2> <ul><li><p>重点 1 ：判定是否在棋盘是符合规则：是否是同一列、同一行、同一斜列</p> <p>这里使用一维数组，来保存二维数组中的点的位置，使用如下的算法，来检验这个规则</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code>                   <span class="token comment">/*
+                     如果他们的摆放位置一样，说明是在同一列
+                     x ....
+                     x ....
+                   */</span>
+                    array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> array<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+                            <span class="token comment">/*
+                              检测是否是同一斜列
+                              下标: 代表的是第几行
+                              值：代表的是第几列
+                              . x . . .  n = 1,value = 1
+                              x . . . .  i = 0,value = 0
+                              Math.abs(n - i) = 1
+                              Math.abs(array[n] - array[i]) = 1
+
+                              . . x . .  n = 1,value = 2
+                              . x . . .  i = 0,value = 1
+                              Math.abs(n - i) = 1
+                              Math.abs(array[n] - array[i]) = 1
+                             */</span>
+                          <span class="token operator">||</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>n <span class="token operator">-</span> i<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">-</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div></li> <li><p>重点 2：递归的回溯流程，一定要明白是怎么回溯的</p></li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/zq99299/dsalg-tutorial/edit/master/docs/dsalg-java-hsp/06/03.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新: :</span> <span class="time">2021-01-05 14:14:42</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/dsalg-tutorial/dsalg-java-hsp/06/02.html" class="prev">
+        递归-迷宫问题
+      </a></span> <span class="next"><a href="/dsalg-tutorial/dsalg-java-hsp/07/">
+        排序算法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/dsalg-tutorial/assets/js/app.1991d278.js" defer></script><script src="/dsalg-tutorial/assets/js/2.31d164c0.js" defer></script><script src="/dsalg-tutorial/assets/js/45.62a00e96.js" defer></script><script src="/dsalg-tutorial/assets/js/32.556e8103.js" defer></script>
+  </body>
+</html>
