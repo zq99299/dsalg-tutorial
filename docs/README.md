@@ -1,5 +1,6 @@
 ---
 home: true
+heroImage: MLOGO200x200.png
 actionText: 图解 Java 数据结构和算法
 actionLink: /dsalg-java-hsp/
 features:

@@ -7,6 +7,10 @@ module.exports = {
   dest: 'build/.vuepress/dist',  // build 时构建的文件放在那里？
   host: 'localhost', // dev 的域名
   port: 8080, // dev 的端口
+  head:[
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+  ],
   markdown: {
     lineNumbers: true
   },
@@ -33,6 +37,7 @@ module.exports = {
     editLinks: true,
     // 默认为 "Edit this page"
     editLinkText: '帮助我们改善此页面！',
+    logo: 'MLOGO40x40.png',
     // 主题级别的配置
     serviceWorker: {
       updatePopup: true // Boolean | Object, 默认值是 undefined.
