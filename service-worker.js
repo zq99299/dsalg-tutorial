@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "fce0f977c5f46e3fa59f0ef4d624d76e"
+    "revision": "5ccdfe37b729154919338347f56e37e7"
   },
   {
     "url": "assets/css/0.styles.c775139a.css",
@@ -822,8 +822,8 @@ self.__precacheManifest = [
     "revision": "86dde996555814aa878f5167bbd616a4"
   },
   {
-    "url": "assets/js/22.ef7a11ec.js",
-    "revision": "56f91fca178b4a550a4a3ca7b3ba4eaa"
+    "url": "assets/js/22.2f14cc2c.js",
+    "revision": "f1871a06cbdb129cf2b9fe5cb851e60c"
   },
   {
     "url": "assets/js/23.374c358e.js",
@@ -890,8 +890,8 @@ self.__precacheManifest = [
     "revision": "e038757dad54e0c7a3ac00b0252bacc9"
   },
   {
-    "url": "assets/js/38.ed9f2aa1.js",
-    "revision": "55edeece41675a6905dd69c27ff9fef5"
+    "url": "assets/js/38.c96ec650.js",
+    "revision": "7a6b3c58d1be17a88dee60bd6fec3491"
   },
   {
     "url": "assets/js/39.dbb782bd.js",
@@ -918,8 +918,8 @@ self.__precacheManifest = [
     "revision": "5cfe3cee5fd56b92eb084adb1aee80af"
   },
   {
-    "url": "assets/js/44.c06555dd.js",
-    "revision": "4e1cc859551e17e0754c6ab324f6c217"
+    "url": "assets/js/44.102d8f5f.js",
+    "revision": "1ecf8d351126e14cc230a23e4e275e23"
   },
   {
     "url": "assets/js/45.9149f76b.js",
@@ -1074,8 +1074,8 @@ self.__precacheManifest = [
     "revision": "5cbe5712d9e2a11585553e01fd8afbd5"
   },
   {
-    "url": "assets/js/8.c7424520.js",
-    "revision": "0b3fe283e04c0e6b140f9c12a171462c"
+    "url": "assets/js/8.15b3d52a.js",
+    "revision": "3f9869c044d1a907776ceb59a275b5c9"
   },
   {
     "url": "assets/js/80.966b967b.js",
@@ -1086,292 +1086,292 @@ self.__precacheManifest = [
     "revision": "358cd872d7a4a78eb38f9a01dc43a5e5"
   },
   {
-    "url": "assets/js/app.44350dbc.js",
-    "revision": "d159618fbcce8f6c4994a36d35feb4bb"
+    "url": "assets/js/app.91b0df6b.js",
+    "revision": "cf7a53d674a8bdd1497a1f2166c92885"
   },
   {
     "url": "dsalg-java-hsp/01/index.html",
-    "revision": "e362f9a86882b1f3d1a671cd06a22935"
+    "revision": "a5f35477400503c8bd658f014ee0bc49"
   },
   {
     "url": "dsalg-java-hsp/02/index.html",
-    "revision": "939afd1cf159434b70ff6e4b24ba9bd5"
+    "revision": "bd5f51ed4b11c7757d806c72ba5d03d2"
   },
   {
     "url": "dsalg-java-hsp/03/01.html",
-    "revision": "8ab421099675090f57d08eead526a731"
+    "revision": "4b11bb215711265e83ada26df62e81fb"
   },
   {
     "url": "dsalg-java-hsp/03/02.html",
-    "revision": "8703013d78bb846313074b383277141c"
+    "revision": "521c9c99137daee1f80f02402a31703f"
   },
   {
     "url": "dsalg-java-hsp/03/index.html",
-    "revision": "614f7a6741e9f37c16a4c670e68caf23"
+    "revision": "ff23146df508ec9e54e56aadd5bcbc7b"
   },
   {
     "url": "dsalg-java-hsp/04/01.html",
-    "revision": "364807424063718998e242639adf844c"
+    "revision": "99f9a3bd0df2c6eadb8227d78f0a14f3"
   },
   {
     "url": "dsalg-java-hsp/04/02.html",
-    "revision": "7424879c5a3700b54b553b2e17c8ee32"
+    "revision": "6413ea137c45dfdc79419aef7f2a2888"
   },
   {
     "url": "dsalg-java-hsp/04/03.html",
-    "revision": "3a8955914d4273ee9dc40383ca360b86"
+    "revision": "3ec497f2d3a94802d3e8ed6b7b5368e2"
   },
   {
     "url": "dsalg-java-hsp/04/04.html",
-    "revision": "1f62ddef0d92e9c92140c7383ff46e57"
+    "revision": "06057f581d6fa2af956b3d42b44dd929"
   },
   {
     "url": "dsalg-java-hsp/04/index.html",
-    "revision": "00fb65137851b102a5bf2f8df7d274fb"
+    "revision": "f2ed8b0b0616333e6cdedc2521c3c572"
   },
   {
     "url": "dsalg-java-hsp/05/01.html",
-    "revision": "02f8d388b4b02fc23af2a5b688c5e197"
+    "revision": "e98dc2db2975f6e8ab8b2e12e7e2d1b1"
   },
   {
     "url": "dsalg-java-hsp/05/02.html",
-    "revision": "5a9c6cdf520edc2d0b7a8b23c861918a"
+    "revision": "50d0f07b5d0c068b7986c241089db0b5"
   },
   {
     "url": "dsalg-java-hsp/05/03.html",
-    "revision": "6a78e2b187eeb309a97e4a2b8c2c51e7"
+    "revision": "31aa43a3d12fa82ef8c6c647f3d5547c"
   },
   {
     "url": "dsalg-java-hsp/05/04.html",
-    "revision": "389a43b75e07261427fda463495057a1"
+    "revision": "897696bdc7b6bdae8c3ffd03e0ff83b5"
   },
   {
     "url": "dsalg-java-hsp/05/05.html",
-    "revision": "7f29f633f7dbaea7244b2d4f96588016"
+    "revision": "71e77d493d77e69e8d38054cade6089a"
   },
   {
     "url": "dsalg-java-hsp/05/index.html",
-    "revision": "aa8105916f6306053ce7040a289f56b8"
+    "revision": "eccb4680fd878c81d569b55d4aa50ccf"
   },
   {
     "url": "dsalg-java-hsp/06/01.html",
-    "revision": "75de3e99359231f5a645e9ec7a08950f"
+    "revision": "638c3a22966364a66c827e82ff70e61c"
   },
   {
     "url": "dsalg-java-hsp/06/02.html",
-    "revision": "7daf835781d7f43ba012e001433b9001"
+    "revision": "4158a750dc6ddc79553cbe5863007b6b"
   },
   {
     "url": "dsalg-java-hsp/06/03.html",
-    "revision": "4c5bc8258120172423830cad95857194"
+    "revision": "ffbaa77f896bf72401ef4d7930c8c8d5"
   },
   {
     "url": "dsalg-java-hsp/06/index.html",
-    "revision": "ad873bf4124d92c8c854f0eb6d79e228"
+    "revision": "6c52e0d802ef3655d550b57f58bea7a0"
   },
   {
     "url": "dsalg-java-hsp/07/01.html",
-    "revision": "7846000575fa29b4a687965b5a70f9b3"
+    "revision": "28bdf4e227df07605760a4e6039eadeb"
   },
   {
     "url": "dsalg-java-hsp/07/02.html",
-    "revision": "4b2b451e0a61584f5df5509e89351d00"
+    "revision": "6c3c29245707d540c067245ec38fab0b"
   },
   {
     "url": "dsalg-java-hsp/07/03.html",
-    "revision": "f86c8ef0baf2b448bcbadb14777ac462"
+    "revision": "bfad8afb4d94a4c54dae8a17c9c513b5"
   },
   {
     "url": "dsalg-java-hsp/07/04.html",
-    "revision": "5f75bc527be0996e61363e731133bdb0"
+    "revision": "053f01841ccde8f07286e296a1fa8b6d"
   },
   {
     "url": "dsalg-java-hsp/07/05.html",
-    "revision": "1afeac0e941694242476a74d54dd01a2"
+    "revision": "ae1a33498631c1529ee7af45dc6847f8"
   },
   {
     "url": "dsalg-java-hsp/07/06.html",
-    "revision": "be71579a205225e5ef83e52e6f519fa0"
+    "revision": "91226ebd72a396ee194038e4f91b4e57"
   },
   {
     "url": "dsalg-java-hsp/07/07.html",
-    "revision": "1e57557595b09a04e88e1ff652fe01ec"
+    "revision": "ccbe44444bf2b49924a61904d762f2b4"
   },
   {
     "url": "dsalg-java-hsp/07/08.html",
-    "revision": "75a0cd701daef413861dc80266b9bbd2"
+    "revision": "d3ea6b87606d42a81c80d270f5d14248"
   },
   {
     "url": "dsalg-java-hsp/07/09.html",
-    "revision": "3177854ac699c96a00ec8454097fb1bd"
+    "revision": "aad976fe3a3abf1439229ee777d69736"
   },
   {
     "url": "dsalg-java-hsp/07/10.html",
-    "revision": "5e3e6fc9cdf372434cd3f7cc49b91a27"
+    "revision": "200233ddd7f3e10bb6fd959420fd97d6"
   },
   {
     "url": "dsalg-java-hsp/07/index.html",
-    "revision": "25f88fae534823deb05fea2dd2c6f24a"
+    "revision": "ff457d2633836f4eb775688c2303a52b"
   },
   {
     "url": "dsalg-java-hsp/08/01.html",
-    "revision": "f98e550d90c91bb973b8d181e47d6526"
+    "revision": "c14233992f9b18ae273d1409ae5123f6"
   },
   {
     "url": "dsalg-java-hsp/08/02.html",
-    "revision": "8dce24c264c0baa2c3473719f404292e"
+    "revision": "97d1c9533cb6721c09548ef94957f182"
   },
   {
     "url": "dsalg-java-hsp/08/03.html",
-    "revision": "32caa280e55f42c35ee16ef45829fc89"
+    "revision": "96d613f6591478a389366ea3b46138b6"
   },
   {
     "url": "dsalg-java-hsp/08/04.html",
-    "revision": "ae28eb8a5e915e1f2335d8f3d0b580bc"
+    "revision": "a68c9578f971756e4908448d3f00b0b5"
   },
   {
     "url": "dsalg-java-hsp/08/index.html",
-    "revision": "464af1fa76defb3448041b9151ff22a1"
+    "revision": "a7fdbfd4f93770a4655df0f80293d5b4"
   },
   {
     "url": "dsalg-java-hsp/09/index.html",
-    "revision": "260259601381f1e29d687741abfa5dec"
+    "revision": "7a43e6befe776fcd392453f2176fbec9"
   },
   {
     "url": "dsalg-java-hsp/10/01.html",
-    "revision": "7e9983ef25a2ee42b091a3cf77a343bb"
+    "revision": "8a2ec6b2eebcdf046bd8f1a84f4ca84d"
   },
   {
     "url": "dsalg-java-hsp/10/02.html",
-    "revision": "ccf3b4fad3cdc62d524a56077b3ffcd0"
+    "revision": "d97256de647cac9af073785ef58840bb"
   },
   {
     "url": "dsalg-java-hsp/10/03.html",
-    "revision": "9747fdb233d15c8a1e2f04dc409073ce"
+    "revision": "f1356b4007667537d54d3c963df16935"
   },
   {
     "url": "dsalg-java-hsp/10/index.html",
-    "revision": "1b1ad8ec1bd61e2b50d22cf6fc0333f9"
+    "revision": "4e0cb3c537385c80cf16740db4be583c"
   },
   {
     "url": "dsalg-java-hsp/11/01.html",
-    "revision": "f782ff037665fb0bab4f8155f8cf0924"
+    "revision": "a5574569b3712a52df78bbb52cc15a57"
   },
   {
     "url": "dsalg-java-hsp/11/02.html",
-    "revision": "2d660ad3fe10a0241a1404a1d28a392e"
+    "revision": "cbd747d593981a7f162c02c3e6dbf050"
   },
   {
     "url": "dsalg-java-hsp/11/03.html",
-    "revision": "b49b770a5fbc7570a2998f1230a38545"
+    "revision": "e4323bd534e3ecd165acfdd117970afb"
   },
   {
     "url": "dsalg-java-hsp/11/04.html",
-    "revision": "1951d317717de2dcbd83a916f2d2fe75"
+    "revision": "e7fd4ac9354e1ffc9d5fd68624476355"
   },
   {
     "url": "dsalg-java-hsp/11/05.html",
-    "revision": "3231620c236d842a7ba8220b23636f4d"
+    "revision": "18dbf479f6425625da439ddca8e826c8"
   },
   {
     "url": "dsalg-java-hsp/11/index.html",
-    "revision": "64bad41e0298d7d7cd17b54f6cfd1a0b"
+    "revision": "1d451e73adb15e89a453f8a86af3a9a1"
   },
   {
     "url": "dsalg-java-hsp/12/01.html",
-    "revision": "21a0c5956510134edb5fa932f1bdd25b"
+    "revision": "b8adcaed5db86659199c455a66576f50"
   },
   {
     "url": "dsalg-java-hsp/12/02.html",
-    "revision": "827eeca2c81ac63c92f7ec22cc332f79"
+    "revision": "e635b504541e2708afdb679f73c1a95f"
   },
   {
     "url": "dsalg-java-hsp/12/03.html",
-    "revision": "70f35f99025d6e7003679641afdb611c"
+    "revision": "f913f496cee8d4e238e4e70b5b0fd328"
   },
   {
     "url": "dsalg-java-hsp/12/index.html",
-    "revision": "3f84a9866fa6dab97425a3fecef8302e"
+    "revision": "6c2685447c511f16483618ac2f040df7"
   },
   {
     "url": "dsalg-java-hsp/13/01.html",
-    "revision": "c6d00fde1eb9408f0acfb8285f652111"
+    "revision": "522bb3dec8e58c0134cc8ccd92841b9f"
   },
   {
     "url": "dsalg-java-hsp/13/02.html",
-    "revision": "4d32491969e3cf15f69684b75f000aac"
+    "revision": "a8fac19ed4ec9a931ef564f7500033ff"
   },
   {
     "url": "dsalg-java-hsp/13/03.html",
-    "revision": "2af173f7ed9a5afb35db708627b21071"
+    "revision": "3ba81f00a12c58028944a5a37fe1b453"
   },
   {
     "url": "dsalg-java-hsp/13/04.html",
-    "revision": "f47b1a2fdc90d67536d9fa0ab428a1b4"
+    "revision": "f42919895db6f39d81607fcc77a65394"
   },
   {
     "url": "dsalg-java-hsp/13/05.html",
-    "revision": "c07b10262bcd0a8c33dba532db1b1fc6"
+    "revision": "bd2852716f1fe7ca3dec0879b9b4ae92"
   },
   {
     "url": "dsalg-java-hsp/13/06.html",
-    "revision": "0df3b2455ac0d197a9cff6ecf001f975"
+    "revision": "34e2ca01d616b188753ec07beda656d6"
   },
   {
     "url": "dsalg-java-hsp/13/07.html",
-    "revision": "117fdfed40330f9f16e3b94dc96af407"
+    "revision": "6f1a431feabe97db2bca21497bcf8fac"
   },
   {
     "url": "dsalg-java-hsp/13/index.html",
-    "revision": "d24229a02c31903e2ff237ef35d3d629"
+    "revision": "fcadb4694a5e3f0888e81ee527dbd950"
   },
   {
     "url": "dsalg-java-hsp/14/01.html",
-    "revision": "25de659f034a35b1b171fbf7893e59d4"
+    "revision": "24aca3ac8269adc341d2c725db54013d"
   },
   {
     "url": "dsalg-java-hsp/14/02.html",
-    "revision": "3ea2fbffedfca18862a596d02e3e2ff4"
+    "revision": "8211250ff9f8a3a1e80328fe2880cd8c"
   },
   {
     "url": "dsalg-java-hsp/14/03.html",
-    "revision": "c23f86f4fac4c551817f36e1382b0f46"
+    "revision": "684f6cbb6e9e20209011ed0d6623b407"
   },
   {
     "url": "dsalg-java-hsp/14/04.html",
-    "revision": "8f55cf853be166d158637ceee438ec2a"
+    "revision": "17a0b3d37f7168812694415a50cc41b4"
   },
   {
     "url": "dsalg-java-hsp/14/05.html",
-    "revision": "deb3696bb35e75557c9072c3c7208cb3"
+    "revision": "bf4b811cfc77cbfd30cd5ecdcfaa97c8"
   },
   {
     "url": "dsalg-java-hsp/14/06.html",
-    "revision": "2d1c8e9272330dfa66826f6fb941fd50"
+    "revision": "8f23314896dbf76d6c07effe39c06dfe"
   },
   {
     "url": "dsalg-java-hsp/14/07.html",
-    "revision": "d97940001564f89d9a14a004a3310b06"
+    "revision": "61f07dcf51af92c3ce1e9eb1081b6c2a"
   },
   {
     "url": "dsalg-java-hsp/14/08.html",
-    "revision": "29b8ba498638cc7a04af6001eae012b4"
+    "revision": "d34d585e1f9ee990a87d63fd9cc90ac7"
   },
   {
     "url": "dsalg-java-hsp/14/09.html",
-    "revision": "46dd60613b24488ac14baafa52df9294"
+    "revision": "1414b9a3be8b43eefd0d2fcc6dec8d80"
   },
   {
     "url": "dsalg-java-hsp/14/10.html",
-    "revision": "dc080a5711fd7c656f40a498516ad41d"
+    "revision": "c13bcd23861bf484c875f3456684f8ff"
   },
   {
     "url": "dsalg-java-hsp/14/index.html",
-    "revision": "cea3b3257cae64b0722026c5524317cf"
+    "revision": "65c58df145e0a262f4493f5a3a323a9d"
   },
   {
     "url": "dsalg-java-hsp/index.html",
-    "revision": "be3e520341c29f425367cc7ccbab7566"
+    "revision": "a56f611ff0ac62a81c5e3df0918be557"
   },
   {
     "url": "hero.png",
@@ -1379,19 +1379,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "088cf551cd969ed1630f336ed4043aaf"
+    "revision": "ac9109eeb029156520902a9ba0e092af"
   },
   {
-    "url": "MLOGO100x100.png",
-    "revision": "883c132dcc91e5bbec348b5f079b0a73"
-  },
-  {
-    "url": "MLOGO200x200.png",
-    "revision": "34f10abae491dc74f3df354df438253f"
-  },
-  {
-    "url": "MLOGO40x40.png",
-    "revision": "a1f84e51a43c597be40640823ae81136"
+    "url": "mlogo.svg",
+    "revision": "ac847ef8c526f385e7288c4808a7b830"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
